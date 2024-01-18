@@ -75,8 +75,8 @@ hamburger.addEventListener("click",() =>{
 /**FJERNE AKTIVERING NÅR KLIKKE PÅ EN TING FUNGERER IKKE! */
 
 document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click",() => {
-  hamburger.classList.remove("aktive");
-  navMenu.classList.remove("aktive");
+  hamburger.classList.remove("active");
+  navMenu.classList.remove("active");
 }))
 
 
