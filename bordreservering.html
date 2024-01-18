@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Reservation Form</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bordreservering.css">
+        
+
+    </head>
+    <body>
+
+
+
+  
+   
+        <section class = "banner">
+            <h2>Reserver Bord</h2>
+            <div class = "card-container">
+                <div class = "card-img">
+                    <!-- image here -->
+                </div>
+
+                <div class = "card-content">
+                    <h3>Book bord</h3>
+                    <form>
+                        <<!-- Ditt eksisterende HTML-kode -->
+
+                        <div class="form-row">
+                            <select name="days">
+                                <option value="day-select">Dag </option>
+                                <option value="Tirsdag">Tirsdag</option>
+                                <option value="Onsdag">Onsdag</option>
+                                <option value="Torsdag">Torsdag</option>
+                                <option value="Fredag">Fredag</option>
+                                <option value="Lørdag">Lørdag</option>
+                            </select>
+    
+                            <select name="hours">
+                                <option value="hour-select">Tid</option>
+                                <option value="10">10: 00</option>
+                                <option value="12">12: 00</option>
+                                <option value="14">14: 00</option>
+                                <option value="16">16: 00</option>
+                                <option value="18">18: 00</option>
+                                <option value="20">20: 00</option>
+                                <option value="22">22: 00</option>
+                            </select>
+                        </div>
+    
+                        <div class="form-row">
+                            <input type="text" placeholder="Navn">
+                            <input type="text" placeholder="Mobil Nummer">
+                            <input type="text" placeholder="Email">
+                        </div>
+    
+                        <div class="form-row">
+                            <select name="adults">
+                                <option value="adult-select">Antall voksne</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">3</option>
+                                <option value="2">4</option>
+                                <option value="2">5</option>
+                                <option value="2">6</option>
+                                <option value="2">7</option>
+                                <option value="2">8</option>
+                                <option value="2">9</option>
+                                <option value="2">10</option>
+                                <option value="2">11</option>
+                                <option value="2">12+</option>
+                                <!-- Legg til flere alternativer etter behov -->
+                            </select>
+    
+                            <select name="children">
+                                <option value="child-select">Antall barn</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">3</option>
+                                <option value="2">4</option>
+                                <option value="2">5</option>
+                                <option value="2">6</option>
+                                <option value="2">7</option>
+                                <option value="2">8</option>
+                                <option value="2">9</option>
+                                <option value="2">10</option>
+                                <option value="2">11</option>
+                                <option value="2">12+</option>
+                          
+                                
+                                <!-- Legg til flere alternativer etter behov -->
+                            </select>
+    
+                            
+                            <input type="submit" value="BOOK BORD">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+ 
+
+    <!-- Ditt eksisterende HTML-kode -->
+
+</body>
+</html>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var daysSelect = document.querySelector('select[name="days"]');
+                var hoursSelect = document.querySelector('select[name="hours"]');
+                var form = document.querySelector('form');
+            
+                // Åpningstider
+                var openingHours = {
+                    'Tirsdag': ['16:00', '22:00'],
+                    'Onsdag': ['16:00', '22:00'],
+                    'Torsdag': ['16:00', '22:00'],
+                    'Fredag': ['16:00', '22:00'],
+                    'Lørdag': ['15:00', '23:00'],
+                    'Lørdah': ['15:00', '23:00'],
+                };
+            
+                // Funksjon for å oppdatere tidspunktene basert på valgt dag
+                function updateHours() {
+                    var selectedDay = daysSelect.value;
+                    var availableHours = openingHours[selectedDay];
+            
+                    // Fjern alle eksisterende alternativer
+                    hoursSelect.innerHTML = '<option value="hour-select">Tid</option>';
+            
+                    // Legg til nye alternativer basert på åpningstider
+                    if (availableHours) {
+                        for (var i = 0; i < availableHours.length; i++) {
+                            var option = document.createElement('option');
+                            option.value = availableHours[i];
+                            option.text = availableHours[i];
+                            hoursSelect.add(option);
+                        }
+                    }
+                }
+            
+                // Lytt til endringer i dager for å oppdatere tidspunktene
+                daysSelect.addEventListener('change', updateHours);
+            
+                // Lytt til skjemainnsending (du må implementere det du vil gjøre med skjemaet)
+                form.addEventListener('submit', function (event) {
+                    event.preventDefault(); // Forhindrer standard skjemahandling
+                    // Legg til din egen logikk for skjemainnsending her
+                    alert('Reservasjonsforespørsel sendt vi gleder oss til å treffe deg!');
+                });
+            });
+     </script>
+
+  
+
+    </body>
+</html>
