@@ -27,6 +27,69 @@ body {
   z-index: 1000;
 }
 
+
+
+
+/* siden under utvikling melding */
+
+#development-message {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 10px; /* Justert fra helt til siden */
+  transform: translate(0, -50%);
+  background-color: #f8d7da;
+  padding: 20px;
+  text-align: center;
+  color: #721c24;
+  font-size: 16px;
+  z-index: 1000;
+}
+
+#exclamation-icon {
+  position: fixed;
+  top: 50%;
+  left: -50px; /* Justert for å gi litt plass fra siden */
+  transform: translate(0, -50%);
+  background-color: #dc3545;
+  color: #fff;
+  padding: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+  transition: all 0.3s ease-in-out;
+}
+
+#exclamation-icon:hover {
+  transform: translate(0, -50%) scale(1.2);
+}
+
+#arrow {
+  position: fixed;
+  top: 40%;
+  left: 20px; /* Justert for å gi litt plass fra siden */
+  transform: translate(0, -50%);
+  color: #eb6262;
+  font-size: 24px;
+  cursor: pointer;
+  animation: arrowAnimation 2s infinite ease-in-out;
+  z-index: 1002;
+}
+
+@keyframes arrowAnimation {
+  0%, 100% {
+      transform: translate(0, -50%);
+  }
+  50% {
+      transform: translate(0, 10px);
+  }
+}
+
+/**/
+
+
+
+
 #navbar {
   margin-top: 31px; 
 }
