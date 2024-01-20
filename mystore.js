@@ -13,24 +13,6 @@
 
 
 
-function sendEmail() {
-  emailjs.send("gmail", "template_id", {
-      to_email: "amiraalhasan2003@gmail.com",
-      from_name: document.getElementById("name").value,
-      from_email: document.getElementById("email").value,
-      subject: document.getElementById("subject").value,
-      message: document.getElementById("message").value,
-  }).then(
-      function(response) {
-          console.log("Email sent successfully:", response);
-          alert("Email sent successfully!");
-      },
-      function(error) {
-          console.error("Email failed to send:", error);
-          alert("Error sending email. Please try again later.");
-      }
-  );
-}
 
 
 
@@ -72,17 +54,26 @@ hamburger.addEventListener("click",() =>{
   navMenu.classList.toggle("active");
 })
 
-/**FJERNE AKTIVERING NÅR KLIKKE PÅ EN TING FUNGERER IKKE! */
+
 
 document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click",() => {
   hamburger.classList.remove("active");
   navMenu.classList.remove("active");
 }))
 
+document.addEventListener('DOMContentLoaded', function () {
+  setTimeout(function () {
+      document.getElementById('exclamation-icon').style.left = '10px'; // Justert posisjon etter forsinkelse
+  }, 1000); // Forsinkelse på 1000ms (1 sekund)
+});
 
-
-
-
+document.getElementById('exclamation-icon').addEventListener('click', function () {
+  if (document.getElementById('development-message').style.display === 'block') {
+      document.getElementById('development-message').style.display = 'none';
+  } else {
+      document.getElementById('development-message').style.display = 'block';
+  }
+});
 
 
 
