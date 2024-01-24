@@ -15,7 +15,7 @@ body {
   
 }
 
-#announcement-bar {
+#tilbud-bar {
   background-color: #e8cb57; 
   color: #000; 
   padding: 10px;
@@ -141,7 +141,7 @@ ul {
   margin-bottom: 20px;
 }
 
-.restaurant-name {
+.restaurant-navn {
   font-size: 25px;
   margin-left: 10px;
   font-family: 'Italianno';
@@ -177,7 +177,7 @@ ul {
   color: #db3232;
 }
 
-/* Header Start */
+/* Header  */
 header {
   height: 100vh;
  background: url('/bilder/background3.jpeg') center center/cover no-repeat;
@@ -213,7 +213,7 @@ nav ul li a:hover {
   border-bottom: 2px solid #db3232;
 }
 
-header .content {
+header .innhold {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -231,12 +231,12 @@ header::before {
   background: rgb(0, 0, 0, 0.6);
 }
 
-header .content h1 {
+header .innhold h1 {
   font-size: 40px;
   color: #fff;
 }
 
-header .content p {
+header .innhold p {
   color: #fff;
   margin: 20px 0 40px;
 }
@@ -245,67 +245,14 @@ header * {
   z-index: 10;
 }
 
-/* Header End */
-
-/* About Start */
-#about {
-  height: 80vh;
-  background: #f4f4f4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#about .title,
-#offers .title,
-#menu .title {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-#about h2,
-#offers h2,
-#menu h2 {
-  font-size: 40px;
-  margin-bottom: 20px;
-}
-
-#about h2 {
-  color: #383848;
-}
-
-#about .title p {
-  font-weight: 600;
-  font-size: 14px;
-  color: #9a9a9a;
-}
-
-#about .about-content {
-  display: flex;
-  justify-content: space-between;
-}
-
-#about .about-content p {
-  margin-right: 7rem;
-  line-height: 1.6;
-  color: #9a9a9a;
-  font-weight: 500;
-}
-
-#about img {
-  max-width: 450px;
-}
-
-#about .about-content a {
-  margin-top: 2rem;
-}
-/* About End */
-
-/* Menu Section Start */
+/* Header slutter */
 
 
 
-#menu {
+/* Meny begynner */
+
+
+#meny {
   background: #c8c890;
   
   padding: 5rem 0;
@@ -313,51 +260,51 @@ header * {
 
 
 
-#menu .title h2 {
+#meny .title h2 {
   color: #383848;
 }
-#menu .title p {
+#meny .title p {
   color: #9a9a9a;
   font-weight: 500;
 }
 
-#menu .menu-items {
+#meny .meny-items {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#menu .menu-items .menu-item {
+#meny .meny-items .meny-item {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 40px;
 }
 
-#menu .menu-items .menu-item img {
+#meny .meny-items .meny-item img {
   width: 80px;
   margin-right: 20px;
   border-radius: 50%;
 }
 
-#menu .menu-items .menu-item h3 {
+#meny .meny-items .meny-item h3 {
   color: #383848;
   border-bottom: 1px dashed #c2bdbd;
   padding-bottom: 10px;
   position: relative;
 }
 
-#menu .menu-items .menu-item span {
+#meny .meny-items .meny-item span {
   position: absolute;
   right: 0px;
   top: 0;
 }
 
-#menu .menu-items .menu-item p {
+#meny .meny-items .meny-item p {
   margin-top: 10px;
 }
 
-#menu .btn {
+#meny .btn {
   display: block;
   margin: auto;
   border: none;
@@ -365,10 +312,10 @@ header * {
 }
 
 
-/* Menu Section End */
+/* Meny  slutter */
 
 
-/* Gallery section start */
+/* Gallery begynner */
 #gallery {
   padding: 8rem 0 6rem;
 }
@@ -426,24 +373,27 @@ header * {
   border-radius: 15px;
 }
 
+/* gallery slutter */
 
+/*leke med størelse slette etter hvert
 .storebilde{
-  width: 450px;
-  height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
 }
+ */
 
 
 
+/*Om Oss*/
 
-
-
-#about-us {
+#om-oss{
   background-color: #f8f8f8;
   padding: 50px 0;
 }
 
 .container {
-  max-width: 1200px;
+
   margin: 0 auto;
   overflow: hidden;
 }
@@ -455,18 +405,18 @@ h2 {
   margin-bottom: 30px;
 }
 
-.about-content {
+.om-innhold{
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.about-text {
+.om-text {
   flex: 1;
   margin-right: 20px;
 }
 
-.about-images {
+.om-images {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
@@ -474,12 +424,13 @@ h2 {
   
 }
 
-.about-images img {
+.om-images img {
   width: 100%;
   height: 80%;
   margin-bottom: 20px;
 }
 
+/* gallery slutter */
 
 
 
@@ -488,12 +439,7 @@ h2 {
 
 
 
-
-
-
-
-
-/* Contact Section start */
+/* kontakt  begynner */
 #contact {
   background: #f4f2ed;
   padding: 5rem 0;
@@ -607,28 +553,21 @@ form button {
     font-size: 28px;
   }
 
-  #about {
+  #om {
     height: auto;
     padding: 4rem 2rem;
   }
 
-  #about .about-content p {
+  #om .om-content p {
     margin-right: 2rem;
   }
 
-  #about img {
+  #om img {
     width: 250px;
   }
 
-  #offers .offers-items img {
-    width: 150px;
-  }
 
-  #offers .offers-items h3 {
-    font-size: 18px;
-  }
-
-  #menu .menu-items {
+  #meny .meny-items {
     display: block;
   }
 
@@ -636,11 +575,17 @@ form button {
     flex-direction: column;
   }
 
+  #om-container{
+    padding: 30px 25px;
+  }
+
   @media (max-width: 800px) {
     .hamburger{
       display: block;
+
     
   }
+
 
   .hamburger.active .bar:nth-child(2){
     opacity: 0;
