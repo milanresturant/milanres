@@ -1,6 +1,7 @@
 
 
-/*document.querySelector(".bars-menu").addEventListener("click", () => {
+/* fungerer ikke :( 
+document.querySelector(".bars-menu").addEventListener("click", () => {
     document.querySelector(".nav-items").classList.toggle("active");
   });
   
@@ -15,7 +16,7 @@
 
 
 
-
+/* klikke funksjon på hvert bilde i gallery for å bli stor  */ 
 document.addEventListener("DOMContentLoaded", function () {
   var images = document.querySelectorAll("#gallery .img-gallery img");
   
@@ -43,8 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-
+/* responsive haburger for meny */
 
 const hamburger = document.querySelector(".hamburger")
 const navMenu = document.querySelector(".nav-menu")
@@ -53,18 +53,19 @@ hamburger.addEventListener("click",() =>{
   hamburger.classList.toggle("active");
   navMenu.classList.toggle("active");
 })
-
-
+/* responsive meny går vekk når klikke på en nav-linke*/ 
 
 document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click",() => {
   hamburger.classList.remove("active");
   navMenu.classList.remove("active");
 }))
 
+
+/* siden under utviklings melding */
 document.addEventListener('DOMContentLoaded', function () {
   setTimeout(function () {
       document.getElementById('exclamation-icon').style.left = '10px'; // Justert posisjon etter forsinkelse
-  }, 1000); // Forsinkelse på 1000ms (1 sekund)
+  }, 1000); 
 });
 
 document.getElementById('exclamation-icon').addEventListener('click', function () {
