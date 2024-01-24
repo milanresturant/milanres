@@ -6,9 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Milan ResTURANT</title>
-    <!-- Style Link -->
-    <link rel="stylesheet" href="./style.css">
-    <!-- Fontawsome -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Fontawsome linker -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,14 +18,13 @@
 
 
     
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+    <!-- javascript linken -->
     <script src="mystore.js" defer></script>
 </head>
 
 <body>
 
-    <div id="announcement-bar">
+    <div id="tilbud-bar">
         Vi har alle hovedretter for 199 kr fra 1. februar til 15. februar!
     </div>
 
@@ -48,16 +46,20 @@
         <div id="navbar">
             <div class="logo-container">
                 <img src="./bilder/logomilan.png" alt="Milan Bar & Restaurant ">
-                <span class="restaurant-name">Milan Bar & Restaurant</span>
+                <a href="#index.html" class="restaurant-navn"><span>Milan Bar & Restaurant</span></a>
+
             </div >
             
             <nav class="navigation">
                 <ul class="nav-menu">
                     <li class="nav-item"><a href="#navbar" class="nav-link">Velkommen</a></li>
-                    <li class="nav-item"><a href="#about-us" class="nav-link" >OM oss</a></li>
-                    <li class="nav-item"><a href="#menu" class="nav-link">Meny</a></li>
+                    <li class="nav-item"><a href="#om-oss" class="nav-link" >OM oss</a></li>
+                    <li class="nav-item"><a href="#meny" class="nav-link">Meny</a></li>
+                   <!-- <li class="nav-item"><a href="#gallery" class="nav-link">Vår Gallery</a></li>-->
                     <li class="nav-item"><a href="#contact" class="nav-link">Kontakt</a></li>
                 </ul>
+
+                <!--Hamburger Responsive meny-->
                 <div class="hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -65,7 +67,7 @@
                 </div>
             </nav>
         </div>
-        <div class="content">
+        <div class="innhold">
             <h1>Velkommen Til <span class="primary-text"> MILAN BAR & RESTURANT </span></h1>
             <p>Med gode smaker og ekte kvalitetsråvarer hos oss kan du nytte  den ekte italienske smaken</p>
             <a href="bordreservering.html" class="btn btn-primary">RESERVER BORD</a>
@@ -76,97 +78,97 @@
         
 <!-- 
        
-        <section id="menu">
+        <section id="meny">
             <div class="container">
                 <div class="title">
                     <h2>Vår Meny</h2>
                 </div>
-                <div class="menu-items">
-                    <div class="menu-items-left">
-                        <div class="menu-item">
-                            <img src="./bilder/gallery1.png" alt="LASAL Cheese">
+                <div class="meny-items">
+                    <div class="meny-items-left">
+                        <div class="meny-item">
+                            <img src="./bilder/gallery1.png" alt="">
                             <div>
                                 <h3>navn <span class="primary-text">pris kr</span></h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
+                                <p> om retten </p>
                             </div>
                         </div>
-                        <div class="menu-item">
-                            <img src="./bilder/gallery2.png" alt="JUMBO CRAB SHRIMP" >
+                        <div class="meny-item">
+                            <img src="./bilder/gallery2.png" alt="" >
                             <div>
                                 <h3>navn <span class="primary-text">pris kr</span></h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
+                                <p> om retten</p>
                             </div>
                         </div>
-                        <div class="menu-item">
-                            <img src="./bilder/gallery3.png" alt="KOKTAIL JUCIE">
+                        <div class="meny-item">
+                            <img src="./bilder/gallery3.png" alt="">
                             <div>
                                 <h3>navn <span class="primary-text">pris kr</span></h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
+                                <p> om retten </p>
                             </div>
                         </div>
-                        <div class="menu-item">
-                            <img src="./bilder/gallery4.png" alt="CAPO STEAK">
+                        <div class="meny-item">
+                            <img src="./bilder/gallery4.png" alt="">
                             <div>
                                 <h3>navn<span class="primary-text">pris kr</span></h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
+                                <p> om retten </p>
                             </div>
                         </div>
-                        <div class="menu-item">
-                            <img src="./bilder/gallery5.png" alt="GNOCCHI SALVIE">
+                        <div class="meny-item">
+                            <img src="./bilder/gallery5.png" alt="">
                             <div>
                                 <h3>GNOCCHI SALVIE<span class="primary-text">269 kr</span></h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
+                                <p> om retten </p>
                             </div>
                         </div>
-                        <div class="menu-item">
-                            <img src="./bilder/gallery7.png" alt="CHEESE PIZZA">
+                        <div class="meny-item">
+                            <img src="./bilder/gallery7.png" alt="">
                             <div>
                                 <h3>navn <span class="primary-text">pris kr</span></h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
+                                <p> om retten </p>
                             </div>
                         </div>
                     </div>
-                    <div class="menu-items-right">
-                        <div class="menu-item">
-                            <img src="./bilder/gallery6.png" alt="KOFTA MEAT">
+                    <div class="meny-items-høyre">
+                        <div class="meny-item">
+                            <img src="./bilder/gallery6.png" alt="">
                             <div>
                                 <h3>navn <span class="primary-text">pris kr</span></h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
+                                <p> om retten</p>
                             </div>
                         </div>
-                        <div class="menu-item">
-                            <img src="/bilder/gallery8.png" alt="SPANISH PIES">
+                        <div class="meny-item">
+                            <img src="/bilder/gallery8.png" alt="">
                             <div>
                                 <h3>navn <span class="primary-text">pris kr</span></h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
+                                <p> om retten</p>
                             </div>
                         </div>
-                        <div class="menu-item">
-                            <img src="./img/food9.jpeg" alt="CHEESE TOST">
+                        <div class="meny-item">
+                            <img src="./bilder/" alt="">
                             <div>
                                 <h3>navn <span class="primary-text">pris kr</span></h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
+                                <p> om retten </p>
                             </div>
                         </div>
-                        <div class="menu-item">
-                            <img src="./img/food10.jpeg" alt="FRUIT SALAD">
+                        <div class="meny-item">
+                            <img src="./bilder/" alt="">
                             <div>
-                                <h3>navn <span class="primary-text">pris kr</span></h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
+                                <h3> navn <span class="primary-text">pris kr</span></h3>
+                                <p> om retten</p>
                             </div>
                         </div>
-                        <div class="menu-item">
-                            <img src="./img/food11.jpeg" alt="CHICKEN SHAWARMA">
+                        <div class="meny-item">
+                            <img src="./bilder/" alt="">
                             <div>
                                 <h3>navn <span class="primary-text">pris kr</span></h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
+                                <p> om retten </p>
                             </div>
                         </div>
-                        <div class="menu-item">
-                            <img src="./img/food12.jpeg" alt="MEGA CHEESE PIZZA">
+                        <div class="meny-item">
+                            <img src="./bilder/" alt="">
                             <div>
                                 <h3>navn <span class="primary-text">pris kr</span></h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
+                                <p> om retten </p>
                             </div>
                         </div>
                     </div>
@@ -174,7 +176,7 @@
 
                  --->
 
-                 <section id="menu">
+                 <section id="meny">
                     <div class="container">
                         <div class="title">
 
@@ -190,7 +192,7 @@
        
         <!-- Meny -->
         
-        <!-- Gallery Section for food Start -->
+        <!-- Gallery  for mat begynner -->
          <!--
         <section id="gallery">
             <div class="container">
@@ -206,9 +208,9 @@
             </div>
         </section>
         --->
-        <!-- Gallary Section End -->
+        <!-- Gallary slutter -->
 
-        <!--Gallery section for pic start-->
+        <!--Gallery  for Maleri begynner-->
        
         <!--
         <section id="gallery">
@@ -227,14 +229,14 @@
     -->
 
 
-        <!--Gallery section for pic end-->
+        <!--Gallery for Maleri slutter-->
 
-
-        <section id="about-us">
-            <div class="container">
+    <!-- Om oss begynner -->
+        <section id="om-oss">
+            <div class="container" id="om-container">
                 <h2>Om Oss</h2>
-                <div class="about-content">
-                    <div class="about-text">
+                <div class="om-innhold">
+                    <div class="om-text">
                         <p>
                             Velkommen til Milan Bar & Restaurant, hvor vi bringer deg den autentiske smaken av Italia rett til bordet ditt.
                             Vårt lidenskapelige team av kokker og servitører streber etter å gi deg en minneverdig matopplevelse i
@@ -251,7 +253,7 @@
                             kjærlighet til mat med deg.
                         </p>
                     </div>
-                    <div class="about-images">
+                    <div class="om-images">
                         <img src="./bilder/omoss1.jpeg" alt="Om Oss Bilde 1">
                         
                     </div>
@@ -294,7 +296,7 @@
             
                         
              
-                    <script src="mystore.js" defer></script>
+                
 </body>
 
 </html>
