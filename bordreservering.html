@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Reservation Form</title>
+        <title>Bord reservering</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="bordreservering.css">
+        <link rel="stylesheet" href="./bordreservering.css">
         
 
     </head>
@@ -13,24 +13,24 @@
 
         <section class="banner">
             <h2>Reserver Bord</h2>
-            <div class="card-container">
-                <div class="card-img">
+            <div class="kort-beholder">
+                <div class="kort-img">
                     <!-- image here -->
                 </div>
         
-                <div class="card-content">
+                <div class="kort-innhold">
                     <h3>Book bord</h3>
                     <form action="https://formsubmit.co/rizeruner@gmail.com" method="POST">
                         <input type="hidden" name="_captcha" value="false">
-                        <div class="form-row">
+                        <div class="form-rad">
                             <input type="text" name="name" placeholder="Navn">
                             <input type="text" name="mobile" placeholder="Mobil Nummer">
                             <input type="text" name="email" placeholder="Email">
                         </div>
         
-                        <div class="form-row">
+                        <div class="form-rad">
                             <select name="adults">
-                                <option value="adult-select">Antall:</option>
+                                <option value="antall-personer">Antall:</option>
                                 <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -46,9 +46,9 @@
                                 <option value="12+">12+</option>
                             </select>
         
-                            <div class="reservation">
-                                <label for="reservationDate">Velg dato:</label>
-                                <input type="datetime-local" id="reservationDate" name="reservationDate" min="2024-01-17T16:00" max="2025-01-01T22:00" required>
+                            <div class="reservasjon">
+                                <label for="reservasjonsdato">Velg dato:</label>
+                                <input type="datetime-local" id="reservasjonsdato" name="reservasjonsdato" min="2024-01-17T16:00" max="2025-01-01T22:00" required>
                             </div>
         
                             <input id="knapp" type="submit" value="BOOK BORD">
