@@ -32,37 +32,8 @@ body {
 
 /* siden under utvikling melding */
 
-#development-message {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 10px; /* Justert fra helt til siden */
-  transform: translate(0, -50%);
-  background-color: #f8d7da;
-  padding: 20px;
-  text-align: center;
-  color: #721c24;
-  font-size: 16px;
-  z-index: 1000;
-}
 
-#exclamation-icon {
-  position: fixed;
-  top: 50%;
-  left: -50px; /* Justert for å gi litt plass fra siden */
-  transform: translate(0, -50%);
-  background-color: #dc3545;
-  color: #fff;
-  padding: 20px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 1001;
-  transition: all 0.3s ease-in-out;
-}
 
-#exclamation-icon:hover {
-  transform: translate(0, -50%) scale(1.2);
-}
 
 #arrow {
   position: fixed;
@@ -125,7 +96,7 @@ ul {
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1600px;
   margin: auto;
 }
 
@@ -389,7 +360,7 @@ header * {
 
 #om-oss{
   background-color: #f8f8f8;
-  padding: 50px 0;
+  padding: 20px 0;
 }
 
 .container {
@@ -409,11 +380,16 @@ h2 {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  max-height: 600px;
 }
 
 .om-text {
   flex: 1;
   margin-right: 20px;
+  font-size: 22PX;
+ font-family: "Quicksand", sans-serif;
+  
+  
 }
 
 .om-images {
@@ -426,7 +402,7 @@ h2 {
 
 .om-images img {
   width: 100%;
-  height: 80%;
+  height: 70%;
   margin-bottom: 20px;
 }
 
@@ -524,6 +500,10 @@ form button {
   padding: 15px 0;
   font-size: 14px;
 }
+
+.read-more-link{
+  display: none;
+}
 /* Footer End */
 
 /* Responsiveness */
@@ -533,11 +513,13 @@ form button {
 
 
 
+/* Add this at the end of your existing CSS */
+
+/* Responsive Styles */
 
 @media (max-width: 1000px) {
   #navbar img {
     margin-left: 20px;
-
   }
 
   nav ul {
@@ -546,26 +528,25 @@ form button {
 
   nav ul li a {
     padding: 10px;
-   
   }
 
-  header .content h1 {
+  header .innhold h1 {
     font-size: 28px;
   }
 
-  #om {
-    height: auto;
+  #om-oss {
     padding: 4rem 2rem;
   }
 
-  #om .om-content p {
-    margin-right: 2rem;
+  #om-oss .om-text,
+  #om-oss .om-images {
+    margin-right: 0;
+    margin-bottom: 20px;
   }
 
-  #om img {
-    width: 250px;
+  #om-oss img {
+    width: 100%;
   }
-
 
   #meny .meny-items {
     display: block;
@@ -575,54 +556,137 @@ form button {
     flex-direction: column;
   }
 
-  #om-container{
-    padding: 30px 25px;
+  form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .hamburger {
+    display: block;
   }
 
-  .innhold{
-    margin: 0 15px;
-  }
-
-  @media (max-width: 800px) {
-    .hamburger{
-      display: block;
-
-    
-  }
-
-
-  .hamburger.active .bar:nth-child(2){
+  .hamburger.active .bar:nth-child(2),
+  .hamburger.active .bar:nth-child(1),
+  .hamburger.active .bar:nth-child(3) {
     opacity: 0;
-  }
-  .hamburger.active .bar:nth-child(1){
     transform: translateY(8px) rotate(45deg);
-  }
-
-  .hamburger.active .bar:nth-child(3){
     transform: translateY(-8px) rotate(-45deg);
   }
 
-  .nav-menu{
+  .nav-menu {
     position: fixed;
     left: -100%;
-    top:135px;
+    top: 135px;
     gap: 0;
     flex-direction: column;
-    background-color:rgba(200, 176, 176, 0.335);
+    background-color: rgba(200, 176, 176, 0.335);
     width: 100%;
     text-align: center;
     transition: 0.3s;
   }
 
-  .nav-item{
+  .nav-item {
     margin: 16px 0;
   }
-.nav-menu.active{
-  left: 0;
-  
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  #om-container {
+    display: block;
+}
+
+.om-innhold {
+    flex-direction: column-reverse; 
+    text-align: center; 
+}
+
+.om-images {
+    width: 100%; 
+    height: 50%;
+    margin-right: 0; 
+}
+
+.om-text {
+  text-align: left;
+  font-size: 13px;
+  font-family: 'Courier New', Courier, monospace;
+}
+.om-images img {
+    width: 100%; 
+    margin-bottom: 20px; 
+}
+
+.om-text p:nth-child(2),
+.om-text p:nth-child(3) {
+  display: none; 
+}
+
+.om-text p:first-child {
+  position: relative;
+}
+
+.read-more-link {
+  color: red; 
+  text-decoration: underline; 
+  cursor: pointer;
+  display: inline; 
+  position: absolute;
+  bottom: 0;
 
 }
- 
-}
+
+header .innhold h1 {
+  font-size: 17px;
+  text-align: center;
 }
 
+header .innhold p {
+  font-size: 12px;
+  text-align: center;
+}
+
+.logo-container {
+  margin-left: -20px;
+}
+.logo-container img {
+  width: 10px;
+  margin-bottom: 5px;
+}
+
+.logo-container a {
+  font-size: 20px;
+}
+
+.contact-info {
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center; 
+}
+
+.contact-info div {
+  margin-bottom: 20px;
+}
+
+form {
+  max-width: 80%;
+  margin: auto; 
+}
+
+input,
+textarea,
+button {
+  width: 100%; 
+  margin-bottom: 15px; 
+}
+
+#contact .contact-info h3{
+  font-size: 18px;
+}
+
+#contact .contact-info p{
+  font-size: 13px;
+}
+}
