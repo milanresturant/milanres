@@ -1,84 +1,139 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Bord reservering</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./bordreservering.css">
-        
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bord reservering</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./bordreservering.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "Nm6khW6Jx_Ne22GpE",
+            });
+        })();
+    </script>
+        <script type="text/javascript">
+            window.onload = function() {
+                document.getElementById('contact-form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    // these IDs from the previous steps
+                    emailjs.sendForm('service_t7xdlnz', 'contact_form', this)
+                        .then(() => {
+                            console.log('SUCCESS!');
+                            window.location.href = "bekreftelse.html";
+                        }, (error) => {
+                            console.log('FAILED...', error);
+                        });
 
-    </head>
-    <body>
 
-        <section class="banner">
-            <h2>Reserver Bord</h2>
-            <div class="kort-beholder">
-                <div class="kort-img">
-                    <!-- image here -->
+                    emailjs.sendForm('service_t7xdlnz', 'template_4vi7w4g', this)
+                    .then(() => {
+                            console.log('SUCCESS!');
+                        }, (error) => {
+                            console.log('FAILED...', error);
+                        });    
+                });
+            }
+
+        </script>
+</head>
+<body>
+
+<section class="banner">
+    <h2>Reserver Bord</h2>
+    <div class="kort-beholder">
+        <div class="kort-img">
+            <!-- image here -->
+        </div>
+
+        <div class="kort-innhold">
+            <h3>Book bord</h3>
+            <form id="contact-form">
+                <input type="hidden" name="_captcha" value="false">
+                <div class="form-rad1">
+                    <input type="text" name="name" placeholder="Navn" required>
+                    <input type="text" name="mobile" placeholder="Mobil Nummer" required>
+                    <input type="text" name="email" placeholder="Email" required>
                 </div>
-        
-                <div class="kort-innhold">
-                    <h3>Book bord</h3>
-                    <form action="https://formsubmit.co/rizeruner@gmail.com" method="POST">
-                        <input type="hidden" name="_captcha" value="false">
-                        <div class="form-rad">
-                            <input type="text" name="name" placeholder="Navn">
-                            <input type="text" name="mobile" placeholder="Mobil Nummer">
-                            <input type="text" name="email" placeholder="Email">
-                        </div>
-        
-                        <div class="form-rad">
-                            <select name="adults">
-                                <option value="antall-personer">Antall:</option>
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12+">12+</option>
-                            </select>
-        
-                            <div class="reservasjon">
-                                <label for="reservasjonsdato">Velg dato:</label>
-                                <input type="datetime-local" id="reservasjonsdato" name="reservasjonsdato" min="2024-01-17T16:00" max="2025-01-01T22:00" required>
-                            </div>
-        
-                            <input id="knapp" type="submit" value="BOOK BORD">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-        
-        
- 
 
-    <!-- Ditt eksisterende HTML-kode -->
+                <div class="form-rad">
+                    <div class="reservasjon">
+                        <input type="datetime-local" id="reservasjonsdato" name="reservasjonsdato"  required>
+                    </div>    
+                    <select name="adults">
+                        <option value="antall-personer">Antall:</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12+">12+</option>
+                    </select>                        
+                </div>
+                <input id="knapp" type="submit" value="BOOK BORD">
+            </form>
+        </div>
+    </div>
+</section>
+<div class="reservasjon">
+    <input type="datetime-local" id="reservasjonsdato" name="reservasjonsdato" required>
+</div>
+
+<script>
+    var reservasjonsdatoInput = document.getElementById('reservasjonsdato');
+    var nå = new Date();
+    reservasjonsdatoInput.min = nå.toISOString().slice(0, 16);
+
+    function erMandag(dato) {
+        return dato.getDay() === 1;
+    }
+
+    function erTirsdagTilTorsdag(dato) {
+        var dag = dato.getDay();
+        return dag >= 2 && dag <= 4;
+    }
+
+    function erFredagTilSøndag(dato) {
+        var dag = dato.getDay();
+        return dag >= 5;
+    }
+
+    reservasjonsdatoInput.addEventListener('input', function() {
+        var valgtDato = new Date(this.value);
+
+        if (valgtDato < nå) {
+            this.setCustomValidity("Vennligst velg en dato og tid fra i dag og utover.");
+            return;
+        }
+
+        this.setCustomValidity("");
+
+        if (erMandag(valgtDato)) {
+            this.setCustomValidity("Restauranten er stengt på mandager. Vennligst velg en annen dato.");
+        } else {
+            var valgtTime = valgtDato.toLocaleTimeString('en-US', {hour12: false, hour: '2-digit', minute: '2-digit', timeZone: 'UTC'});
+            valgtTime = parseInt(valgtTime.slice(0, 2));
+
+            if (erTirsdagTilTorsdag(valgtDato) && (valgtTime < 16 || valgtTime >= 22)) {
+                this.setCustomValidity("Restaurantens åpningstider er fra 16:00 til 22:00 tirsdag til torsdag. Vennligst velg en annen tid.");
+            } else if (erFredagTilSøndag(valgtDato) && (valgtTime < 15 || valgtTime >= 23)) {
+                this.setCustomValidity("Restaurantens åpningstider er fra 15:00 til 23:00 fredag til søndag. Vennligst velg en annen tid.");
+            } else {
+                this.setCustomValidity("");
+            }
+        }
+    });
+</script>
 
 </body>
-</html>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var daysSelect = document.querySelector('select[name="days"]');
-                var hoursSelect = document.querySelector('select[name="hours"]');
-                var form = document.querySelector('form');
-            
-                
-            
-                
-                
-            });
-     </script>
-
-  
-
-    </body>
 </html>
