@@ -52,13 +52,26 @@ body{
 }
 .form-rad{
     display: flex;
-    width: 100%;
-    height: 70px;
-    margin: 0 auto;
-    margin-top: 30px;
-
+    flex-direction: row; /* Change to column if you want vertical alignment */
+    width: 100%; /* Make it cover the whole width */
+    margin: 0;
 
 }
+
+
+
+select[name="adults"], #reservasjonsdato {
+    margin-right: 0;
+    height: 60%;
+    box-sizing: border-box;
+}
+
+.reservasjon {
+    width: 70%; /* Increase the width for the reservasjon div */
+    box-sizing: border-box;
+    margin-right: 20px;
+}
+
 form select, form input{
     display: block;
     width: 100px;
@@ -75,27 +88,22 @@ form select, form input{
 form input[type = text], form input[type = number], form input::placeholder, select{
     color: #9a9a9a;
 }
-form input[type = submit]{
-    color: #fff;
-    background:  rgb(169, 37, 37);
-    padding: 0px 0px;
-    border-radius: 4px;
+#knapp {
+    width: 100%; /* Make the submit button cover the whole width */
+    height: 100%; /* Make the button fill the height of book-bord */
+   
+}
+
+form #knapp {
+    padding-top: 10px;
+    padding-bottom: 10px; 
+    margin-bottom: 40px;
+    background-color: rgb(169, 37, 37);
     cursor: pointer;
-    margin-top: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-form input[type = submit]:hover{
-    opacity: 0.9;
 }
 
-
-form #knapp{
-    padding-top: 12px;
-    padding-bottom: 30px;
-    margin-bottom: 300px;
-    
+form input[type=submit] {
+    margin-top: 10%; 
 }
 
 
@@ -132,5 +140,81 @@ form {
 
     .banner{
        padding-top:20px; 
+    }
+}
+
+@media (max-width: 800px) {
+    .kort-beholder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kort-img {
+        width: 100%;
+        height: 250px;
+        max-width: 300px;
+        margin: -20px auto 0; 
+        margin-bottom: 10px;
+    }
+
+    .kort-innhold {
+        width: 100%; /* Make it cover the whole width */
+        align-items: center;
+        padding: 0 10px; 
+        height: auto;
+        
+        
+    }
+
+    .banner h2 {
+        padding-bottom: 20px;
+    }
+
+    input[type="text"], input[type="email"], input[type="datetime-local"] {
+        width: 100%;
+        margin-left: 0;
+        box-sizing: border-box;
+      }
+    
+    .form-rad {
+        display: flex;
+        flex-direction: row; /* Change to column if you want vertical alignment */
+        width: 100%; /* Make it cover the whole width */
+        margin: 0;
+    }
+    
+    select[name="adults"], #reservasjonsdato {
+        margin-right: 0;
+        height: 60%;
+        box-sizing: border-box;
+    }
+    
+    .reservasjon {
+        width: 70%; /* Increase the width for the reservasjon div */
+        box-sizing: border-box;
+    }
+    
+
+    .book-bord {
+        width: 100%; /* Make it cover the whole width */
+       align-self: flex-start;
+    }
+    
+    #knapp {
+        width: 100%; /* Make the submit button cover the whole width */
+        height: 100%; /* Make the button fill the height of book-bord */
+       
+    }
+
+    form #knapp {
+        padding-top: 10px;
+        padding-bottom: 10px; 
+        margin-bottom: 40px;
+        margin-left: 0;
+    }
+
+    form input[type=submit] {
+        margin-top: 10%; 
     }
 }
