@@ -76,6 +76,19 @@ document.getElementById('exclamation-icon').addEventListener('click', function (
   }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  var readMoreLink = document.getElementById("read-more-link");
+  var hiddenParagraphs = document.querySelectorAll(".om-text p:nth-child(2), .om-text p:nth-child(3)");
+
+  readMoreLink.addEventListener("click", function () {
+    hiddenParagraphs.forEach(function (paragraph) {
+      paragraph.style.display = (paragraph.style.display === 'none' || paragraph.style.display === '') ? 'block' : 'none';
+    });
+
+    // Toggle the text of the "Read more" link
+    readMoreLink.innerText = (readMoreLink.innerText === 'Les mer') ? 'Les mindre' : 'Les mer';
+  });
+});
 
 
 
