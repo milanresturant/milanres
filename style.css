@@ -51,7 +51,7 @@ body {
 
 
 #navbar {
-  margin-top: 31px; 
+  margin-top: 0; 
 }
 .hamburger{
 display: none;
