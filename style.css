@@ -15,17 +15,6 @@ body {
   
 }
 
-#tilbud-bar {
-  background-color: #e8cb57; 
-  color: #000; 
-  padding: 10px;
-  text-align: center; 
-  font-weight: bold;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
 
 
 
@@ -117,7 +106,7 @@ ul {
   margin-left: 10px;
   font-family: 'Italianno';
   margin-top:30px;
-  color: #fff; /* Adjust the color as needed */
+  color: #fff; 
 }
 
 /* Utility Classes */
@@ -513,7 +502,7 @@ form button {
 
 
 
-/* Add this at the end of your existing CSS */
+
 
 /* Responsive Styles */
 
