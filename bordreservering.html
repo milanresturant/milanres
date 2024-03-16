@@ -15,30 +15,21 @@
             });
         })();
     </script>
-        <script type="text/javascript">
-            window.onload = function() {
-                document.getElementById('contact-form').addEventListener('submit', function(event) {
-                    event.preventDefault();
-                    // these IDs from the previous steps
-                    emailjs.sendForm('service_t7xdlnz', 'contact_form', this)
-                        .then(() => {
-                            console.log('SUCCESS!');
-                            window.location.href = "bekreftelse.html";
-                        }, (error) => {
-                            console.log('FAILED...', error);
-                        });
-
-
-                    emailjs.sendForm('service_t7xdlnz', 'template_4vi7w4g', this)
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_t7xdlnz', 'contact_form', this)
                     .then(() => {
-                            console.log('SUCCESS!');
-                        }, (error) => {
-                            console.log('FAILED...', error);
-                        });    
-                });
-            }
-
-        </script>
+                        console.log('SUCCESS!');
+                        window.location.href = "bekreftelse.html";
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
 </head>
 <body>
 
@@ -85,9 +76,6 @@
         </div>
     </div>
 </section>
-<div class="reservasjon">
-    <input type="datetime-local" id="reservasjonsdato" name="reservasjonsdato" required>
-</div>
 
 <script>
     var reservasjonsdatoInput = document.getElementById('reservasjonsdato');
